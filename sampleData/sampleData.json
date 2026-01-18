@@ -1,0 +1,18 @@
+{
+    "loginData": {
+        "username": "rahulshettyacademy",
+        "password": "learning",
+        "userRole": "Teacher"
+    },
+    "invalidLoginData": {
+        "username": "invaliduser",
+        "password": "wrongpassword"
+    },
+    "urls": {
+        "loginPage": "https://rahulshettyacademy.com/loginpagePractise/",
+        "shopPage": "https://rahulshettyacademy.com/angularpractice/shop"
+    },
+    "expectedTexts": {
+        "logo": "ProtoCommerce"
+    }
+}
