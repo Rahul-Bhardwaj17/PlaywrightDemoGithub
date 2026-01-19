@@ -9,7 +9,7 @@ test("alert test", async ({ page }) => {
     await page.locator('#alertbtn').click();
 });
 
-test("confirm alert test", async ({ page }, devices) => {
+test("confirm alert test", async ({ page }) => {
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
     page.on('dialog', dialog => {
         console.log(dialog.message());
