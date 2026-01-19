@@ -2,10 +2,6 @@ import { test, expect } from "@playwright/test";
 import dataDriveSample from "../sampleData/dataDrivenSample.json";
 
 const users = dataDriveSample.data;
-// const users = [
-//     { username: "admin", password: "admin123" },
-//     { username: "user1", password: "user123" }
-// ];
 
 for (const user of users) {
     test(`login with ${user.username}`, async ({ page }) => {
