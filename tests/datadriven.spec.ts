@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
 import dataDriveSample from "../sampleData/dataDrivenSample.json";
 
 const users = dataDriveSample.data;
