@@ -9,7 +9,7 @@ interface LoginData {
     // Add other columns from your Excel file here if needed
 }
 
-test("validatelogin test flow", async ({ page }) => {
+test("validatelogin test a flow q", async ({ page }) => {
     await page.goto("/loginpagePractise/");
     // await page.getByRole('textbox', { name: 'Username:' }).fill('rahulshettyacademy');
     // await page.getByRole('textbox', { name: 'Password:' }).fill('learning');
@@ -46,7 +46,7 @@ const loginDataFromExcel: LoginData[] = excelData.utils.sheet_to_json(sheet);
 
 // Data-driven testing: iterate over each row in Excel
 for (const userData of loginDataFromExcel) {
-    test(`validatelogin test flow with excel input - User: ${userData.username}`, async ({ page }) => {
+    test(`validatelogin test a flow a with excel input - User: ${userData.username}`, async ({ page }) => {
         await page.goto("/loginpagePractise/");
 
         await page.getByRole('textbox', { name: 'Username:' }).fill(userData.username);

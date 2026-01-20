@@ -31,6 +31,6 @@ test("validatelogin test flow", async ({ page }) => {
     await loginPage.navigateToLoginPage();
     await loginPage.login("rahulshettyacademy", "learning");
     await loginPage.selectRoleAndSubmit("Teacher");
-    await expect.soft(page).toHaveURL('/angularpractice/shop');
+    await expect(page).toHaveURL('https://rahulshettyacademy.com/loginpagePractise/');
 
 })
