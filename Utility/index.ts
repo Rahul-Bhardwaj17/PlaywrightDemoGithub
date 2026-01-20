@@ -4,3 +4,4 @@ export { dataDriveSample }
 import sampleDataExample from "../sampleData/sampleData.json";
 export { sampleDataExample }
 export * as excelData from "xlsx";
+export { LoginPage } from "../PageObect/LoginPage";
