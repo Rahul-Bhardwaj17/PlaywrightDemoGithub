@@ -1,7 +1,7 @@
 import { test, expect, Locator } from "@playwright/test";
 
 test("list test", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    await page.goto("/AutomationPractice/");
     const radioBtns: Locator = page.locator('input[type="radio"]');
     const radioBtnsCount = await radioBtns.count();
     console.log(`radio button Count is ${radioBtnsCount}`);

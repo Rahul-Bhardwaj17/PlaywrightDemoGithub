@@ -1,7 +1,7 @@
 import { test, expect, Locator } from "@playwright/test";
 
 test("dynamic dropdown test", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    await page.goto("/AutomationPractice/");
     const dynamicDropdown: Locator = page.locator("input[id=autocomplete]");
     await dynamicDropdown.fill("ind");
     const suggestions: Locator = page.locator('//li[@class="ui-menu-item"]//div');

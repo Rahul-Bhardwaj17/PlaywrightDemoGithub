@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 
 test("alert test", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    await page.goto("/AutomationPractice/");
     page.on('dialog', dialog => {
         console.log(dialog.message());
         dialog.accept();
@@ -10,7 +10,7 @@ test("alert test", async ({ page }) => {
 });
 
 test("confirm alert test", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    await page.goto("/AutomationPractice/");
     page.on('dialog', dialog => {
         console.log(dialog.message());
         dialog.dismiss();
@@ -19,7 +19,7 @@ test("confirm alert test", async ({ page }) => {
 });
 
 test("prompt alert test", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    await page.goto("/AutomationPractice/");
     page.on('dialog', dialog => {
         console.log(dialog.message());
         dialog.accept();

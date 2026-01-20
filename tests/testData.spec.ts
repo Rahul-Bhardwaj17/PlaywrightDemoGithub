@@ -11,7 +11,7 @@ interface LoginData {
 }
 
 test("validatelogin test flow", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+    await page.goto("/loginpagePractise/");
     // await page.getByRole('textbox', { name: 'Username:' }).fill('rahulshettyacademy');
     // await page.getByRole('textbox', { name: 'Password:' }).fill('learning');
     await page.getByRole('textbox', { name: 'Username:' }).fill(sampleData.loginData.username);
@@ -27,7 +27,7 @@ test("validatelogin test flow", async ({ page }) => {
     //   await expect.soft(page).toHaveURL('https://rahulshettyaca');
     // Hard assertion
     console.log('i am executing');
-    await expect.soft(page).toHaveURL('https://rahulshettyacademy.com/angularpractice/shop');
+    await expect.soft(page).toHaveURL('/angularpractice/shop');
     console.log('check to execute');
     await expect(page).toHaveURL(/angularpractice?\//);
     const logo = page.locator('//a[text()="ProtoCommerce"]');
@@ -48,7 +48,7 @@ const loginDataFromExcel: LoginData[] = excelData.utils.sheet_to_json(sheet);
 // Data-driven testing: iterate over each row in Excel
 for (const userData of loginDataFromExcel) {
     test(`validatelogin test flow with excel input - User: ${userData.username}`, async ({ page }) => {
-        await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+        await page.goto("/loginpagePractise/");
 
         await page.getByRole('textbox', { name: 'Username:' }).fill(userData.username);
         await page.getByRole('textbox', { name: 'Password:' }).fill(userData.password);
@@ -60,7 +60,7 @@ for (const userData of loginDataFromExcel) {
 
         // Assertions
         console.log(`Testing with user: ${userData.username}`);
-        await expect.soft(page).toHaveURL('https://rahulshettyacademy.com/angularpractice/shop');
+        await expect.soft(page).toHaveURL('/angularpractice/shop');
         await expect(page).toHaveURL(/angularpractice?\//);
         const logo = page.locator('//a[text()="ProtoCommerce"]');
         await expect(logo).toHaveText("ProtoCommerce");

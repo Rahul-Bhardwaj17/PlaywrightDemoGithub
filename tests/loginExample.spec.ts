@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 test("validatelogin test flow", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+    await page.goto("/loginpagePractise/");
     await page.getByRole('textbox', { name: 'Username:' }).fill('rahulshettyacademy');
     await page.getByRole('textbox', { name: 'Password:' }).fill('learning');
 
@@ -14,7 +14,7 @@ test("validatelogin test flow", async ({ page }) => {
     //   await expect.soft(page).toHaveURL('https://rahulshettyaca');
     // Hard assertion
     console.log('i am executing');
-    await expect.soft(page).toHaveURL('https://rahulshettyacademy.com/angularpractice/shop');
+    await expect.soft(page).toHaveURL('/angularpractice/shop');
     console.log('check to execute');
     await expect(page).toHaveURL(/angularpractice?\//);
     const logo = page.locator('//a[text()="ProtoCommerce"]');
