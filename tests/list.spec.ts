@@ -1,4 +1,4 @@
-import { test, expect, Locator } from "@playwright/test";
+import { test, expect, Locator } from "../Utility/index";
 
 test("list test", async ({ page }) => {
     await page.goto("/AutomationPractice/");

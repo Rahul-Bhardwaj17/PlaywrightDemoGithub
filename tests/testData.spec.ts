@@ -1,6 +1,5 @@
-import { test, expect } from "@playwright/test";
-import sampleData from "../sampleData/sampleData.json";
-import * as excelData from "xlsx";
+import { test, expect, sampleDataExample, excelData } from "../Utility/index";
+// import * as excelData from "xlsx";
 
 // Define the interface for your Excel data structure
 interface LoginData {
@@ -14,12 +13,12 @@ test("validatelogin test flow", async ({ page }) => {
     await page.goto("/loginpagePractise/");
     // await page.getByRole('textbox', { name: 'Username:' }).fill('rahulshettyacademy');
     // await page.getByRole('textbox', { name: 'Password:' }).fill('learning');
-    await page.getByRole('textbox', { name: 'Username:' }).fill(sampleData.loginData.username);
-    await page.getByRole('textbox', { name: 'Password:' }).fill(sampleData.loginData.password);
+    await page.getByRole('textbox', { name: 'Username:' }).fill(sampleDataExample.loginData.username);
+    await page.getByRole('textbox', { name: 'Password:' }).fill(sampleDataExample.loginData.password);
 
     await page.locator('span').nth(2).click();
     // await page.getByRole('combobox').selectOption('Teacher');
-    await page.getByRole('combobox').selectOption(sampleData.loginData.userRole);
+    await page.getByRole('combobox').selectOption(sampleDataExample.loginData.userRole);
     await page.getByRole('checkbox', { name: 'I Agree to the terms and' }).check();
     await page.getByRole('button', { name: 'Sign In' }).click();
 

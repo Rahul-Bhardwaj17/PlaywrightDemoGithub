@@ -1,4 +1,4 @@
-import { test, expect, devices } from "@playwright/test";
+import { test, expect } from "../Utility/index";
 
 // Tests running on Pixel 5 (Mobile
 //test.use({ ...devices["Pixel 5"] });

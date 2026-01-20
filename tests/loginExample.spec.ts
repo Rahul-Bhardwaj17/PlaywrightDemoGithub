@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../Utility/index";
 
 test("validatelogin test flow", async ({ page }) => {
     await page.goto("/loginpagePractise/");

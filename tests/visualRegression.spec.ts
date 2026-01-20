@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../Utility/index";
 
 test("radio button test on mobile", async ({ page }) => {
     await page.goto("/AutomationPractice/", { waitUntil: "domcontentloaded" });

@@ -1,5 +1,5 @@
-import { test } from "@playwright/test";
-import dataDriveSample from "../sampleData/dataDrivenSample.json";
+// import { test } from "@playwright/test";
+import { test, dataDriveSample } from "../Utility/index";
 
 const users = dataDriveSample.data;
 

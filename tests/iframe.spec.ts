@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../Utility/index';
 
 test.use({ video: { mode: 'on', size: { width: 500, height: 500 } } })
 test('iframe test', async ({ page }) => {
