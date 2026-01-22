@@ -8,36 +8,20 @@ export class LoginPage {
     }
 
     get username() {
-        return this.page.getByRole('textbox', { name: 'Username:' })
+        return this.page.locator('#username')
     }
 
     get password() {
-        return this.page.getByRole('textbox', { name: 'Password:' })
-    }
-
-    get dropdown() {
-        return this.page.getByRole('combobox')
-    }
-
-    get radiobutton() {
-        return this.page.locator('span').nth(2)
-    }
-
-    get checkbox() {
-        return this.page.getByRole('checkbox', { name: 'I Agree to the terms and' })
+        return this.page.locator('#password')
     }
 
     get submitButton() {
-        return this.page.getByRole('button', { name: 'Sign In' })
+        return this.page.locator('#loginBtn')
     }
 
-    async login(username: string, password: string, role: string) {
+    async login(username: string, password: string) {
         await this.username.fill(username)
         await this.password.fill(password)
-        await this.radiobutton.click()
-        await this.dropdown.selectOption(role)
-        await this.checkbox.check();
         await this.submitButton.click()
-
     }
 }
