@@ -1,7 +1,7 @@
 export * from "@playwright/test";
-import dataDriveSample from "../Utility/sampleData/dataDrivenSample.json";
-export { dataDriveSample }
-import sampleDataExample from "../Utility/sampleData/sampleData.json";
-export { sampleDataExample }
+import dataDrivenSample from "../Utility/sampleData/dataDrivenSample.json";
+export { dataDrivenSample }
+import sampleData from "../Utility/sampleData/sampleData.json";
+export { sampleData }
 export * as excelData from "xlsx";
-export { LoginPage } from "../PageObect/LoginPage";
+export { LoginPage } from "../PageObject/LoginPage"
