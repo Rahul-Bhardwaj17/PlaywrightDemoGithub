@@ -7,3 +7,4 @@ export * as excelData from "xlsx";
 export { LoginPracticePage } from "../PageObject/LoginPracticePage"
 export { AutomationPracticePage } from "../PageObject/AutomationPracticePage"
 export { LoginPage } from "../PageObject/LoginPage"
+export { PageManager } from "../PageObject/PageManager"
