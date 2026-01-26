@@ -1,6 +1,6 @@
 import { test, expect } from "../Utility/index";
 
-test.describe.only('context handler', () => {
+test.describe('context handler', () => {
     test.describe.configure({ mode: 'parallel' });
     test.beforeEach(async ({ page }) => {
         await page.goto("/AutomationPractice/");
