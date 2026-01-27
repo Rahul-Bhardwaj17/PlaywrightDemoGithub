@@ -19,7 +19,7 @@ export class LoginPage {
         return this.page.locator('#loginBtn')
     }
 
-    async login(username: string, password: string) {
+    async login(username: string, password: string): Promise<void> {
         await this.username.fill(username)
         await this.password.fill(password)
         await this.submitButton.click()
