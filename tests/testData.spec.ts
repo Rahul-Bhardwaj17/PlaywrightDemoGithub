@@ -1,6 +1,5 @@
-import { test, expect } from "@playwright/test";
-import sampleData from "../sampleData/sampleData.json";
-import * as excelData from "xlsx";
+import { test, expect, sampleData, excelData } from "../Utility/index";
+// import * as excelData from "xlsx";
 
 // Define the interface for your Excel data structure
 interface LoginData {
@@ -10,8 +9,8 @@ interface LoginData {
     // Add other columns from your Excel file here if needed
 }
 
-test("validatelogin test flow", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+test("validatelogin test a flow q", async ({ page }) => {
+    await page.goto("/loginpagePractise/");
     // await page.getByRole('textbox', { name: 'Username:' }).fill('rahulshettyacademy');
     // await page.getByRole('textbox', { name: 'Password:' }).fill('learning');
     await page.getByRole('textbox', { name: 'Username:' }).fill(sampleData.loginData.username);
@@ -27,7 +26,7 @@ test("validatelogin test flow", async ({ page }) => {
     //   await expect.soft(page).toHaveURL('https://rahulshettyaca');
     // Hard assertion
     console.log('i am executing');
-    await expect.soft(page).toHaveURL('https://rahulshettyacademy.com/angularpractice/shop');
+    await expect.soft(page).toHaveURL('/angularpractice/shop');
     console.log('check to execute');
     await expect(page).toHaveURL(/angularpractice?\//);
     const logo = page.locator('//a[text()="ProtoCommerce"]');
@@ -40,15 +39,15 @@ test("validatelogin test flow", async ({ page }) => {
 });
 
 // Read Excel data before describing tests
-const workbook = excelData.readFile('./sampleData/sampleExcelData.xlsx');
+const workbook = excelData.readFile('./Utility/sampleData/sampleExcelData.xlsx');
 const sheetName = workbook.SheetNames[0];
 const sheet = workbook.Sheets[sheetName];
 const loginDataFromExcel: LoginData[] = excelData.utils.sheet_to_json(sheet);
 
 // Data-driven testing: iterate over each row in Excel
 for (const userData of loginDataFromExcel) {
-    test(`validatelogin test flow with excel input - User: ${userData.username}`, async ({ page }) => {
-        await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+    test(`validatelogin test a flow a with excel input - User: ${userData.username}`, async ({ page }) => {
+        await page.goto("/loginpagePractise/");
 
         await page.getByRole('textbox', { name: 'Username:' }).fill(userData.username);
         await page.getByRole('textbox', { name: 'Password:' }).fill(userData.password);
@@ -60,7 +59,7 @@ for (const userData of loginDataFromExcel) {
 
         // Assertions
         console.log(`Testing with user: ${userData.username}`);
-        await expect.soft(page).toHaveURL('https://rahulshettyacademy.com/angularpractice/shop');
+        await expect.soft(page).toHaveURL('/angularpractice/shop');
         await expect(page).toHaveURL(/angularpractice?\//);
         const logo = page.locator('//a[text()="ProtoCommerce"]');
         await expect(logo).toHaveText("ProtoCommerce");

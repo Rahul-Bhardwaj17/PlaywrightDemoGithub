@@ -1,4 +1,4 @@
-import { test, expect, request } from "@playwright/test";
+import { test, expect, request } from "../Utility/index";
 
 test.use({ baseURL: "https://postman-echo.com" })
 test("api test", async () => {

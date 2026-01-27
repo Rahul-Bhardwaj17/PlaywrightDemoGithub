@@ -22,8 +22,12 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
   outputDir: './test-debugging',
+  reporter: [
+    ['list'],
+    ['allure-playwright']
+  ],
+
   // reporter: [
   //   ["html"],
   //   ["json", { outputFile: "results.json" }],
@@ -34,16 +38,16 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'https://rahulshettyacademy.com',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     // trace: 'on',
-    trace: 'on',
+    trace: 'retain-on-failure',
     // video: {
     //   mode: 'on',
     //   size: { width: 1024, height: 768 },
     // }
-    video: 'on',
+    video: 'retain-on-failure',
 
   },
 
@@ -55,15 +59,15 @@ export default defineConfig({
 
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {

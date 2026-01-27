@@ -1,8 +1,8 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../Utility/index";
 
 test("radio button test on mobile", async ({ page }) => {
-    await page.goto("https://rahulshettyacademy.com/AutomationPractice/", { waitUntil: "domcontentloaded" });
-    await page.waitForURL("https://rahulshettyacademy.com/AutomationPractice/");
+    await page.goto("/AutomationPractice/", { waitUntil: "domcontentloaded" });
+    await page.waitForURL("/AutomationPractice/");
     const radio2Btn = page.locator("input[value='radio2']");
     await radio2Btn.click();
     await expect(radio2Btn).toBeChecked({ timeout: 20000 });

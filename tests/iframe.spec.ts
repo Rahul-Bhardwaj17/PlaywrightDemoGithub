@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '../Utility/index';
 
 test.use({ video: { mode: 'on', size: { width: 500, height: 500 } } })
 test('iframe test', async ({ page }) => {
-    await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+    await page.goto('/AutomationPractice/');
     const frames = page.frames();
     console.log(`all frame counts ${frames.length}`);
     const iframe = page.frameLocator('#courses-iframe');
